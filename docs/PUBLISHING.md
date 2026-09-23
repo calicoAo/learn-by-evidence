@@ -33,7 +33,7 @@ python -m unittest discover -s tests -p "test_*.py"
 ```bash
 git init
 git add .
-git commit -m "Initial release: learn-by-evidence v1.0.0"
+git commit -m "feat: initial release of learn-by-evidence v1.1.0"
 git branch -M main
 git remote add origin https://github.com/<your-account>/learn-by-evidence.git
 git push -u origin main
@@ -50,14 +50,14 @@ git push -u origin main
 
 ## 首个 Release
 
-校验通过后可创建 `v1.0.0` 标签和 GitHub Release：
+校验通过后可创建 `v1.1.0` 标签和 GitHub Release：
 
 ```bash
-git tag -a v1.0.0 -m "Learn by Evidence v1.0.0"
-git push origin v1.0.0
+git tag -a v1.1.0 -m "Learn by Evidence v1.1.0"
+git push origin v1.1.0
 ```
 
-Release 说明可直接摘取 `CHANGELOG.md` 的 `1.0.0` 小节。
+Release 说明可直接摘取 `CHANGELOG.md` 的 `1.1.0` 小节。
 
 ## 许可证状态
 

@@ -90,7 +90,7 @@ class RepositoryManifestTests(unittest.TestCase):
     def test_plugin_manifest_has_required_portable_fields(self):
         payload = json.loads((ROOT / "plugin.json").read_text(encoding="utf-8"))
         self.assertEqual("learn-by-evidence", payload["name"])
-        self.assertEqual("1.0.0", payload["version"])
+        self.assertEqual("1.1.0", payload["version"])
         self.assertTrue(payload["description"])
         self.assertEqual(
             "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",

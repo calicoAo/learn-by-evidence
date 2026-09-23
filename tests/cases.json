@@ -149,6 +149,82 @@
       "must_not": ["treat the reference architecture as the only correct answer"]
     },
     {
+      "id": "EXP-01",
+      "type": "behavior",
+      "severity": "P0",
+      "input": "带我弄懂 Retriever 和 Reranker 的区别。我在做自己的 Agent 检索链路，但总把两者混在一起。",
+      "must": ["use the learner's existing retrieval pipeline as the primary anchor", "introduce at most one focal distinction", "start with one concrete prediction or diagnostic when appropriate", "end with at most one short task"],
+      "must_not": ["front-load a general RAG tutorial", "use several competing analogies", "ask multiple independent questions"]
+    },
+    {
+      "id": "EXP-02",
+      "type": "behavior",
+      "severity": "P1",
+      "input": "我刚开始学数据库，用很容易进脑子的方式解释索引，先只讲最核心的一点。",
+      "must": ["teach one core concept", "use no more than two or three new terms that require retention", "give one stable concrete anchor", "keep the intuition, example, boundary, and task within the default information budget"],
+      "must_not": ["enumerate every index type", "add multiple redundant examples", "turn the answer into a complete chapter"]
+    },
+    {
+      "id": "EXP-03",
+      "type": "multiturn",
+      "severity": "P1",
+      "input": [
+        "Assistant explains recursion with a stack-of-boxes anchor.",
+        "User: 我还是有点模糊，你先别换比喻，用刚才那个盒子继续讲。"
+      ],
+      "must": ["reuse the existing boxes anchor", "clarify the mapping between the anchor and the formal mechanism", "reduce the knowledge block or add one prerequisite"],
+      "must_not": ["introduce a second unrelated analogy", "repeat the previous explanation unchanged"]
+    },
+    {
+      "id": "EXP-04",
+      "type": "multiturn",
+      "severity": "P0",
+      "input": [
+        "The learner has failed to understand the same concept twice using one analogy.",
+        "User: 还是没进去脑子里。"
+      ],
+      "must": ["switch to one materially different representation", "check a relevant prerequisite", "state or account for why the original anchor may have failed", "keep the repair focused on the same gap"],
+      "must_not": ["add several new analogies at once", "repeat the same wording", "restart the whole course"]
+    },
+    {
+      "id": "EXP-05",
+      "type": "multiturn",
+      "severity": "P1",
+      "input": [
+        "Assistant teaches candidate retrieval with a fishing-net anchor.",
+        "User: 你检查一下我是不是真的理解了。"
+      ],
+      "must": ["first invite an explanation or judgment using the same anchor", "treat an anchor-free formal explanation or new-context application as stronger evidence", "avoid requiring textbook wording"],
+      "must_not": ["switch immediately to unrelated terminology", "mark mastery from simple repetition"]
+    },
+    {
+      "id": "EXP-06",
+      "type": "behavior",
+      "severity": "P1",
+      "input": "把刚才讲过的 Reranker 做成一页速查表。",
+      "must": ["reuse the established mental packet for what it is, what it solves, what it does not solve, and how to decide", "keep the anchor, boundary, and terminology consistent with the lesson", "state that the sheet is not mastery evidence"],
+      "must_not": ["invent a conflicting second summary", "treat creating the sheet as proof of mastery"]
+    },
+    {
+      "id": "EXP-07",
+      "type": "behavior",
+      "severity": "P1",
+      "input": "我已经懂基本闭包了，现在请完整推导它和事件循环结合时为什么容易出现旧值问题，代码可以详细一点。",
+      "must": ["honor the explicit request for deeper technical detail", "split the explanation by necessary knowledge blocks", "retain a stable anchor and explicit boundaries"],
+      "must_not": ["apply character limits mechanically to code or derivation", "collapse the requested depth into an oversimplified slogan", "repeat material the learner already demonstrated"]
+    },
+    {
+      "id": "EXP-08",
+      "type": "behavior",
+      "severity": "P1",
+      "input": [
+        "Explain a simple single-boundary concept to a beginner.",
+        "Explain a genuinely more complex concept with two necessary dependent steps to the same learner."
+      ],
+      "must": ["keep the simple explanation within one compact knowledge block", "increase length only for necessary additional structure", "prefer additional rounds over packing multiple new concepts into one response"],
+      "must_not": ["produce similar long tutorial-length answers for both prompts", "add verbosity merely to sound thorough"]
+    },
+    {
       "id": "STATE-01",
       "type": "state",
       "severity": "P0",

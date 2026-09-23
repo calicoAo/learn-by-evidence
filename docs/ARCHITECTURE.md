@@ -32,7 +32,8 @@ Learn by Evidence 把 AI 的职责限制在路径设计、讲解、反馈、诊�
 
 ### 3. 按需参考层
 
-- `references/domain-adaptation.md`：不同领域的代表产出、迁移方式和常见误判。
+- `references/domain-adaptation.md`：不同领域的讲解锚点、代表产出、迁移方式和常见误判。
+- `references/explanation-protocol.md`：先测后讲、锚点复用、信息预算、支架撤除与输出删减。
 - `references/state-and-review.md`：状态字段、证据更新、复习选择与换窗交接。
 
 只有对应任务发生时才读取参考文件，避免每次触发都占用上下文。
@@ -80,6 +81,7 @@ ASSESS → PLAN → TEACH → PRACTICE → FEEDBACK
 - 静态层：frontmatter、引用、元数据、占位内容。
 - 触发层：应该触发与不应触发的请求。
 - 行为层：单题、提示、直接答案、停止条件。
+- 讲解层：锚点选择、信息密度、篇幅护栏、表示切换与压缩一致性。
 - 多轮层：误解诊断、补漏、迁移和能力更新。
 - 状态层：保存、恢复、冲突、答案暴露与主题隔离。
 - 鲁棒性层：提示注入、错误标准答案、版本冲突与高风险领域。

@@ -1,0 +1,13 @@
+interface:
+  display_name: 循证学习教练
+  short_description: 用小步练习、针对性反馈与能力证据，陪你跨领域学习并检验掌握程度
+  default_prompt: 使用 $learn-by-evidence 带我学习一个主题，先确定目标和起点，再按小步练习与能力验证推进。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

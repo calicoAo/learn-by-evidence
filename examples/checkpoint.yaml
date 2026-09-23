@@ -1,0 +1,60 @@
+schema_version: 1
+topic_id: example-retrieval
+record_version: 1
+updated_at: null
+learning_goal: 能诊断并改进常见检索失败
+constraints:
+  session_minutes: 30
+  deadline: null
+  language: zh
+current_level:
+  self_report: 有基础
+  observed: 能区分 recall 与 precision，reranking 尚待验证
+current_unit: reranking-diagnosis
+phase: paused
+materials:
+  - title: Example notes
+    version: null
+    verified: false
+capability_map:
+  - id: retrieval-recall-precision
+    observable_goal: 能根据失败案例区分 recall 与 precision 问题
+    exposure: practiced
+    level: 可独立完成
+    verification: provisional
+    evidence_ids:
+      - exercise-001
+    limitations: 目前只有一次无提示案例判断
+    retention: untested
+mastery_gates:
+  - unit_id: retrieval-basics
+    criteria:
+      - 两个实质不同案例中无提示正确判断
+      - 能说明错误诊断会导致什么无效优化
+    required_evidence: 2
+    evidence_ids:
+      - exercise-001
+    status: not_yet_met
+known_weaknesses:
+  - 容易把排序质量问题也称为召回不足
+mistake_patterns: []
+completed_exercises:
+  - id: exercise-001
+    capability_ids:
+      - retrieval-recall-precision
+    task_summary: 判断候选集中包含答案但结果未排到前列属于哪类问题
+    user_answer_summary: 正确判断为 reranking 问题并说明原因
+    result: pass
+    support: none
+    answer_exposed: false
+    context: interactive
+    observed_at: null
+review_queue:
+  - capability_id: retrieval-recall-precision
+    reason: 只有一次独立证据
+    suggested_when: next_session
+    status: pending
+cheat_sheets: []
+resource_shortlist: []
+pending_task: null
+next_action: 用候选集合不完整的案例与排序错误案例做对比判断
